@@ -1,0 +1,1105 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Calcul Vectoriel:
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+liste:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+On compte à partir de 1
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L : [ 6,-7,2.5,9 ];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L[3] ;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+length(L);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Le : [ 1,6,toto ];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Le[3];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l : [ 1,6,[8,9],90 ];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l[3][1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Lg : makelist( x^2 , x , 0, 5,0.5 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+pour x variant de 0 à 5  et un pas de 0.5 -> 0 0.5^2 1^2 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Opération sur les listes:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(L,3) ;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Extraction d'un élément d'une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+e : L[3];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+e :  part(L,3) ;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L2 : 2*L;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L + L2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Il faut que les listes soient de meme taille
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+sommer éléments d'une liste:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sum( L[i] , i , 1,  length(L) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lsum( x,x,L );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Tri:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort( L , ">" );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(L , "<");
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort( L , orderlessp );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+par valeur croissant mampiasa prédicat
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort( L , ordergreatp );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort( L , ordermagnitudep);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Ajout élément:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L1 : append( L,[ 0,1,2 ] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sublist( L1 , lambda( [x] , x< 3 ) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sublist_indices( L1 , lambda( [x] , x< 3 ) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Matrice : 
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:matrix( [a,b,c] , [d,e,f], [g,h,i] ) ;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diag_matrix(1,5,9);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diagmatrix(4,w);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ident(4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v : matrix( [x] , [y] , [z] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load( eigen )$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u ; covect( [s,t,r]  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+covect : transforme liste en vecteur
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part( A,2,3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part( u,2,1 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A[2][3];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u[2][1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+transpose( A );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+maka colonne:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C : [ part( A, 2 ,1 )  ];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+extraire les 2 premieres colonnes de A 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Opérations sur les matrices et les vecteurs:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+B = A + B;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Definir par transformation d'une liste par la fonction covect (eigen)
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v : matrix( [x] , [y] , [z] )
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : covect( [s,t,r] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(u,2,1 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Passer d'un vecteur à une liste:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+args(u) : liste ( mais les elements de cette liste sont une liste )
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+args (u);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+prendre les parties de u i variant de 1  à 3 ( manomboka 1 ny éléménts ) 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist( part( args(u) , i , 1 ) , i , 1, 3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part( %o29,1,1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+%o29[1][1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u[2];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+makelist( part(  u[i] , 1 ) ,  i, 1, 3  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Opérations sur les vecteurs
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : matrix([7] , [-4] , [6]  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v : covect(  [2,1,-1] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u + v;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+3*u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u*v;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+produit scalaire: ( point )
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u.v;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+u = ( u1 u2 u3 ) v =( v1 v2 v3 )
+u.v = u1v1 + u2v2+u3v3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+unitvector(u);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+vecteur unitaire colinéaire
+
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+créer une fonction norme:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+norm( vec3 ) := sqrt(  vec3[1]^2 + vec3[2]^2 + vec3[3]^2  )[1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+norm(u);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+normSum( vec3 ) := sqrt( sum(part(vec3,i,1)^2 , i ,  1 , 3 ) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+normSum(u);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+e : 1/norm( u )*u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+unit vector
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+norm(e);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Opérations sur les matrices:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M:  matrix( [1,2,3] , [4,5,6] , [1,1,9]  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:matrix( [1,-1,0] , [2,-2,0] , [0,-1,2] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A*M;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M*A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M.A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A.M;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u.v;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+transpose(  M);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant( M );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mat_trace(M);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+invert(M);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+calcul déterminant par méthode de Gauss:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x : lu_factor(M);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+factorisation de Gauss  : coefficients iutilisés pour trouver la matric triang sup ,   matrice triangulaire supérieure 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+If:get_lu_factors(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+x = P.L.U
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P : part  (If , 1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L : part( If , 2 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+U : part( If , 3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant( P ) * determinant(U);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Inversion de matrice par triangularisation de Gauss:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+e1 : covect( [1,0,0] ) ;
+e2 : covect( [0,1,0] ) ;
+e3 : covect( [0,0,1] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Factorisation de la matrice
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+B:lu_factor(M);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+generaling : dans quel ensemble il travail
+matrice voalohany ; coté ambony U , coté ambany L
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Résolution pour chaque colonne : 
+A.vj = ej
+1<= j <= N 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v1 : lu_backsub( B,e1 );
+v2:lu_backsub( B,e2 ); 
+v3:lu_backsub( B , e3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L1 : makelist( part(args(v1) , i , 1) , i , 1, 3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L2 : makelist( part(args(v2) , i , 1) , i , 1, 3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+L3 : makelist( part(args(v3) , i , 1) , i , 1, 3 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Antsangana le résultat d'où transposé ( ligne par ligne -> colonne par colonne )
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M1 : transpose( matrix( L1,L2,L3 ) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Vérification:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M.M1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Rang d'une matrice:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rank( M );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rank(A);s 
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Eléments propre d'une Matrice:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:matrix( [1,-1,0],[2,-2,0],[1,-1,2] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+V : eigenvalues( A );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+[[-1,0,2] , [1,1,1] ] 
+il y a 3 valeurs propres  -1,0,2  
+le faharoa : multiplicité ( miverina impiry )
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+E : eigenvectors( A );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+à la fois les valeurs propres et les vecteurs propres 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+E;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen); //utilisation de covect
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+E[1][1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : covect(E[2][1][1]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : covect(part( E , 2 , 1 , 1 ))
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A.u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+-1*u;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+ainsi A.u = λ.u
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+B : transpose(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eigenvectors( B );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+E;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+2 matrices transposé ont les memes valeurs propres mais pas forcément les meme vecteurs propres
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ident(4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Polynome caractéristique:
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+p(t) = det( t*I - A )
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define( p(t) ,   determinant( t*ident(3) - A ));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+p(- 1 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+p( 0 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+p( 2 );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Les racines de p sont les valeurs propres de A
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+expand( p(t) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Diagonalisation :
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : covect(part( E , 2 , 1 , 1 ));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v : covect(part( E , 2 , 2 , 1 ));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+w : covect(part( E , 2 , 3 , 1 ));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P : transpose((matrix( part( E , 2 , 1 , 1 ) , part( E , 2 , 2 , 1 ) , part( E , 2 , 3 , 1 )) ));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+invP : invert(P);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Diagonalisation de la matrice : P-1.A.P
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+D : invP.A.P;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+simplification expression : radcan
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+D : radcan( invP.A.P );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(D);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mat_trace( A );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mat_trace( D );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+A et D sont 2 matrices équivalentes
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: section start ]
+Systeme d'equation:
+
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Résolution analytique:
+
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+res :algsys( [a*x+b*y=c,d*x+e*y=f] , [x,y] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+res : linsolve( [a*x+b*y=c , d*x+e*y=f] , [x,y] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill( a,b,c,d,e,f,x,y );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+comme Méthode de Cramer
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+linsolve( [a*x+b*y=c , d*x+e*y=f] , [x,y] ) , globalsolve : true ;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill( a,b,c,d,e,f,x,y );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+nommer des équations
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq1 : x[1] + 2*x[2] + 2*x[3] = -1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq2 :  3*x[1] + 3*x[2] + 8*x[3] = -15; 
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq3 :  7*x[2] + 4*x[3] = 2; 
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+linsolve( [eq1,eq2,eq3] , [ x[1] , x[2] , x[3] ] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Résolution numérique:
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A : matrix( [1,3,2,0] , [ 1,4,5,6 ] , [ 3,4,3,-1 ] , [0,1,1,1] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+b : covect( [15.3 , 14.7 , 23.5 , 3.8] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+B : lu_factor( A );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lu_backsub( B , b );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+linsolve_by_lu(  A  , b );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(  a,b,c,d,e,f );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M : matrix( [a,b] , [d,e] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : covect( [c,f] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lu_backsub( lu_factor( M ) , u );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

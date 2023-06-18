@@ -1,0 +1,502 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+%i^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(cos(%e));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+i^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%e);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+i : 5;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+i ^ 2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(i);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+int(20.5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sqrt(12);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sqrt(16);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+32/20;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+(2/3)**5;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+gcd(5, 20);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+gcd(6, 3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+expand(12);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+4!;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rationalize(2.5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+floor(2.5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+floor(-1.5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+tena mbola tsy aiko ny dikanlay conjugue letie
+Hello world
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Wo
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ctrl + 1 ny insertion de commentaire
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+conjugate(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+%o23**2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+%pi**2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sin(sqrt(3)/2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a:5;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+2*a;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+z: 5 + %i*2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+z**2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x: 20;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(z);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x**2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sqrt(x + 21);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+fpprec
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+fpprec:23;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%e);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+fpprec;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+bfloat(%pi);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+fpprec: 16
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%pi);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+%i**2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+log(%e);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(%e);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+log10(x):=log(x)/log(10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+log10(10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):=x^3 - 2*x^2 + 3;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(f);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):= if x < 0 then (x - 1) else x + 1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(-1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):= 2*x^3 + 2*x^2 + x + 1 
+;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(df(x), diff(f(x), x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(d2f(x), diff(f(x), x, 2));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(x, y) := x^2 - y^2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(dg(x, y), diff(g(x, y), x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(x):= x + 1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(2) - g(3, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(h2(x), diff(h(x), x, 1));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(f);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(g);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(h);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(x) := if x <= 0 then x +2 else x^2 + 1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(dh(x), if x <= 0 then diff((x + 2), x) else diff((x^2 + 1), x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h1(x) := x + 2;
+h2(x) := x^2 + 1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(dh1(x), diff(h1(x), x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(dh2(x), diff(h2(x), x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dh2(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(dh(x), if x <= 0 then dh1(x) else dh2(x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dh(10);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dh(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dh1(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dh2(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([sin(x)], [x, -100, 100], [y, -5, 5]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x) := x / (x + 2);
+factor(define(df(x), diff(f(x), x)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(1) Domaine de definition
+f(x) est definie si x + 2 != 0 donc f est definie sur Df = R - { -2 }
+
+(2) Continuite
+f est fonction rationnelle
+or, les fonctions rationnelles sont continues et derivables dans leurs domaines de definition, donc f est continue et derivable dans Df
+
+(3) Tableau de variation
+limite de f(x) quand x tend vers -00 = 1
+limite de f(x) quand x tend vers +00 = 1
+limite de f(x) quand x tend vers -2- = +00
+limite de f(x) quand x tend vers -2+ = -00
+x                 | -00                         -2                          +00
+------------- | ----------------------- | ---------------------------
+df(x)           |                +              ||                  +          
+f                 |                         +00  ||                             1
+                  |                                 ||
+                  |                /                ||                 /
+                  |                                 ||
+                  } 1                              || -00
+
+x = -2 est une asymptote verticale de f(x)
+y = 1 est une asymptote horizontale de f(x) au voisinnage de -∞ et +∞
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x), 1], [x, -5, 5], [y, -5, 5]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d(['parametric, 2, t, [t, -6, 6]], [nticks, 300], [x,-5,5])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+∝
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+
+
+
+g(x) := if x < 2 then x / (x - 3) else (x - 2) ^ 2 - 2;
+factor(define(d1f(x), diff(x / (x - 3), x)));
+factor(define(d2f(x), diff((x - 2) ^ 2 - 2, x)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(1) Domaine de definition
+pour x < 2
+     x - 3 != 0 => Df = R - { 3 }
+pour x >= 2
+    Df = R
+donc Df = R
+
+(2) Continuite:
+  pour x < 2, f est continue
+  pour x >= 2, f est continue
+
+(3) Tableau de variation
+
+x                             | -∞                                       2                              +∞ |
+---------------------- | -------------------------------------------------------------------------|
+df                           |                     -                       0                 +                 |
+f                             | 0                  \                        
+
+
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([g(x), 1], [x, -10, 10], [y, -10, 10]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

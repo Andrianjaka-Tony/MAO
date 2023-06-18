@@ -1,0 +1,162 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Valeur propre d'une matrice
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour trouver les valeurs propres: eigenvalues(A)
+Pour trouver les vecteurs propres: eigenvectors(A)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A: matrix([1, -1, 0], [2, -2, 0], [1, -1, 2]);
+L: eigenvalues(A);
+E: eigenvectors(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+U: covect(part(E, 2, 1, 1));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+B: transpose(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eigenvectors(B);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diagmatrix(3, 1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+I: ident(3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(t):= determinant(t*I - A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+expand(P(t));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Pt: matrix(part(E, 2, 1, 1), part(E, 2, 2, 1), part(E, 2, 3, 1));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P: transpose(Pt);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P1: invert(P);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+D: P1.A.P;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(D);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mat_trace(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mat_trace(D);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P.D.P1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Resolution d'un systeme lineaire
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On utilise la fonction 
+algsys([equations], [valeurs a trouver])
+linsolve([equations], [valeur a trouver])
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+algsys([2*x + y = 2, x + y = 10], [x, y]);
+linsolve([2*x + y = 2, x + y = 10], [x, y]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+eq1: 2*x + y = 2;
+eq2: x + y = 10;
+linsolve([eq1, eq2], [x, y]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+kill(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Resolution numerique
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A: matrix([1, 3, 2, 0], [1, 4, 5, 6], [3, 4, 3, -1], [0, 1, 1, 1]);
+b: covect([15.3, 14.7, 23.5, 3.8]);
+B: lu_factor(A);
+lu_backsub(B, b);
+linsolve_by_lu(A, b);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

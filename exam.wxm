@@ -1,0 +1,147 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+I4: ident(4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A: matrix([1, 1, 1, 1], [1, 1, -1, -1], [1, -1, 1, -1], [1, -1, -1, -1]);
+A.A.A;
+6*A;
+B: 6*A - 4*I4;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x: lu_factor(A);
+lf: get_lu_factors(x);
+P: lf[1];
+L: lf[2];
+U: lf[3];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+e1: covect([1, 0, 0, 0]);
+e2: covect([0, 1, 0, 0]);
+e3: covect([0, 0, 1, 0]);
+e4: covect([0, 0, 0, 1]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v1: lu_backsub(x, e1);
+v2: lu_backsub(x, e2);
+v3: lu_backsub(x, e3);
+v4: lu_backsub(x, e4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste_1 : makelist(v1[i][1], i, 1, length(v1));
+liste_2 : makelist(v2[i][1], i, 1, length(v2));
+liste_3 : makelist(v3[i][1], i, 1, length(v3));
+liste_4 : makelist(v4[i][1], i, 1, length(v4));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A1T : matrix(liste_1, liste_2, liste_3, liste_4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A1: transpose(A1T);
+invert(A1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A1 . A;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+valeurs: eigenvalues(A);
+vecteurs: eigenvectors(A)[2];
+u: vecteurs[3][1];
+v: vecteurs[3][2];
+u: covect(u);
+v: covect(v);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(vect)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+dotproduct(v, u);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Pt: matrix(vecteurs[1][1], vecteurs[2][1], vecteurs[3][1], vecteurs[3][2]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P: transpose(Pt);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+    P1: invert(P);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P1 . A . P;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+radcan(P1 . A . P);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mes : read_nested_list( "./data.txt" , comma );
+wxplot2d( ['discrete , mes],[ style , points ] , [title , "Graphique"] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M : zeromatrix(9, 2);
+for i:1 thru 9 do M[i] : mes[i];
+M;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xd : makelist( part( mes , i, 1 ) , i , length( mes ));
+yd: makelist( part( mes,i,2 ) , i , length(mes) );
+d3( a,b,c )  := sum( ( yd[k] - ( a * xd[k]^2 + b * xd[k] + c )  )^2 , k , 1, length(mes) );
+ratprint : false$kill(a)$kill(b)$kill(c)$
+result: linsolve( [diff( d3(a,b,c),a )=0, diff( d3( a,b,c ),b )=0, diff( d3( a,b,c ),c )=0], [a,b,c] );
+a: result[1];
+b: result[2];
+c: result[3];
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

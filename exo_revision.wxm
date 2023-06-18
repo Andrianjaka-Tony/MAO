@@ -1,0 +1,49 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+matrice : matrix([2, 3], [4, 5]);
+x : lu_factor(matrice);
+lf : get_lu_factors(x);
+P : lf[1];
+L : lf[2];
+U : lf[3];
+load(eigen)$
+e1 : covect(P[1]);
+e2 : covect(P[2]);
+v1 : lu_backsub(x, e1);
+v2 : lu_backsub(x, e2);
+liste_1 : makelist(v1[i][1], i, 1, length(v1));
+liste_2 : makelist(v2[i][1], i, 1, length(v2));
+matrice1T : matrix(liste_1, liste_2);
+matrice1 : transpose(matrice1T);
+matrice . matrice1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+valeurs : eigenvalues(matrice)[1];
+vecteurs: eigenvectors(matrice);
+lamda1 : valeurs[1];
+u1 : covect(vecteurs[2][1][1]);
+radcan(matrice . u1);
+radcan(lamda1 . u1);
+lamda2 : valeurs[2];
+u2 : covect(vecteurs[2][2][1]);
+matrice . u2;
+lamda1 . u2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(t):= determinant(t . ident(2) - matrice);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+float(P(lamda2));
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

@@ -1,0 +1,447 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Primitivation
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(1/x-2/x^2+1, x) = integrate(1/x-2/x^2+1, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(sin(x),x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(1/x-2/x^2+1, x, 1, 2) = integrate(1/x-2/x^2+1, x, 1, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(exp(-x^2), x, -inf, inf) = integrate(exp(-x^2), x, -inf, inf);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(exp(sin(5*x)), x, 0, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Mila comparena amin'ilay methode natao tam S3(Trapeze, Simpson) ny valin'ny quad_qag
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+quad_qag(exp(sin(5*x)), x, 0, 2, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1- Pour resoudre cette probleme, il faut faire un changement de variable
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(1/((x-3)^4+1/2), x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+a) Si on fait un changement de variable: 
+y = x - 3
+dy = dx
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(1/(y^4+1/2),y);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+b) On change tous les y par sa valeur qui est x-3
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst(x-3, y, %);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(log(x)/x, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Developpement limite
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+developpement de x au voisinage de 0
+taylor => f(x) = f(x0) + f '(x0)((x - x0) / 1!) + f ''(x0)((x-x0)^2 / 2!) + ... + f^n(x0)((x - x0)^n/n!)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(sin(x), x, 0, 7);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(exp(x), x, 0, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(sin(x)/x, x, 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(exp(x), x, a, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(sin(x), x, a, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(cos(x), x, 0, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(exp(x)/sin(x), x, 0, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(sin(x)/cos(x), x, 0, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(sin(x)/x, x, 0, 7);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(exp(x)/x, x, 0, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Equation algebrique
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+1) Equation polynomiale:
+    a) solve(2*x^3 -7*x^2 -7*x +30 = 0, x): reponse fraction
+    b) allroots(2*x^3 -7*x^2 -7*x +30 = 0): reponse float
+find_root(sin(x)-x-2, x, -4, 0): methode newton
+load(newton1)$
+    a) newton(x-2-log(x), x, 0.1, 1E-8)
+    b) newton(x-2-log(x), x, 3, 1E-8)
+
+Methode de Newton
+f(x) = 0
+1) separer une racine
+2) x0 assez proche de la racine
+    x(x+1) = xn - f(xn) / f '(xn)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(2*x^3 -7*x^2 -7*x +30 = 0, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(newton1)$;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+newton(x-2-log(x), x, 0.1, 1E-8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+newton(x-2-log(x), x, 3, 1E-8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+allroots(2*x^3 -7*x^2 -7*x +30 = 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(sin(x)-x-2, x, -3, 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+newton(log(x) / x, x, 0.7, 1E-8);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(x^2 + 1 = 0, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d([sin(x)-x-2], [x,-5,5], [y,-5,5]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+newton(sin(x)-x-2, x, -2.5, 1e-13);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(sin(x)-x-2=0, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d([x-2-log(x)], [x, 0.1, 4], [y, -2,2]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(x-2-log(x)=0, x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+find_root(x-2-log(x), x, 0.1, -2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l: [1,2,3,4];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+length(l);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l[3];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+le: [1,2,[1,2], test];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+le[3][1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+valeur de x^2 pour x allant de 0 a 5 avec pas de 0,5
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lg: makelist(x^2, x, 0.5, 0.5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(l,3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l2: 2*l;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+somme: l+l2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sum(l[i], i, 1, length(l));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lsum(x, x, l);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(l, ">");
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(l, "<");
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(l, orderlessp);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(l, ordergreatp);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(l, ordermagnitudep);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l1:append(l,[9,5,10]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+sublist est une fonction pour extraire les elements d'une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sublist(l1, lambda([x], x<2));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sublist_indices(l1, lambda([x], x<3));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Matrice
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:matrix([a,b,c], [d,e,f], [g,h,i]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M: [part(A,1),part(A,2)];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Matrice diagonale
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diag_matrix([x], [y], [z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Matrice scalaire
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diagmatrix(4,x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Matrice identite 4
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ident(4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+vecteur
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v:matrix([x], [y], [z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Permet aussi de declarer une matrice vectorielle
+une liste peut se transformer en vecteur en utilisant covect
+[a, b, c] => covect => matrice vectorielle(a,b,c)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u:covect([a,b,c]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(A,2,3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(u,2,1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(A,2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(A,3,3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+C: [part(A,1,1), part(A,2,1), part(A,3,1)];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+covect(C);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+D: covect([part(A,1,1), part(A,2,1), part(A,3,1)]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

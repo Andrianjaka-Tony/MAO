@@ -1,0 +1,132 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Primitivation
+
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Utiliser la fonction integrate pour faire de la primitive
+par exemple: integrate(f(x), x)
+avec: f(x) la fonction
+          x la variable
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(x + 3, x);
+integrate(sin(x), x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour faire des primitivations avec des changements de variable, 
+par exemple:
+    integrate(1/((x-3)^4+1/2), x);
+  cela ne donnera pas de solution
+  on va d'abord faire comme ceci
+    integrate(1/(y^4+1/2),y);
+  puis 
+    subst(x-3, y, %);
+  apres, on aura un resultat correct
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(1/((x-3)^4+1/2), x);
+integrate(1/(y^4+1/2),y);
+subst(x-3, y, %o47);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Integration
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour faire une integration entre deux bornes a et b, 
+on utilise la fonction integrate(f(x), x, a, b)
+pour les primitives qu'on ne connait pas, on utilise quad_qag
+exemple: quad_qag(f(x), x, a, b, 2) (avec 2 qui designe la precision je pense)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+integrate(2 + x, x, 1, 5);
+quad_qag(exp(sin(5 * x)), x, 0, 2, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Developpement limité
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour faire du developpement limité, on utilise la fonciton taylor(f(x), x, a, b)
+ou a designe 
+ et b designe
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(sin(x), x, 0, 5);
+taylor(cos(x), x, 1, 3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Equation algebrique
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Il y a plusieurs methodes pour resoudre des equations algebriques
+a)  solve(f(x) = c, x)
+b)  allroots(f(x) = c)
+c)  find_root(f(x), x, x0, epsilone)
+d)  newton(f(x), x, x0, epsilone) 
+pour pouvoir utiliser la methode de newton, on doit inclure la methode, pour ce faire, on fait
+load(newton1)$
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+solve(x**2 + 5 = 0, x);
+allroots(x**2 + 5 = 0);
+find_root(x + 2, x, -2.1, 0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+Listes
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+pour creer des listes:
+ex: liste: [l1, l2, l3, ..., ln]
+
+pour connaitre la taille de cette liste:
+ex: length(liste)
+
+pour extraire des elements d'une liste
+ex: liste[n]
+      part(liste, n)
+
+on peut aussi en creer avec la fonction makelist
+ex: lMaked: makelist(5 * i, i, 0, 5, 1)
+cela veut dire: faire une liste composée de i * 5 pour i allant de 0 a 5 avec un pas 1
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

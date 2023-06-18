@@ -1,0 +1,150 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+plot2d([cos(x), sin(x)], [x, -%pi, 2 * %pi], [y, -1.5, 1.5], [gnuplot_preamble, "reset"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([cos(x), sin(x)], [x, -%pi, 2 * %pi], [y, -1.5, 1.5], [gnuplot_preamble, "reset"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):= 
+    if x < 2 then
+        x - 3/2
+    else
+      (2 * x ** 2 - 1) / (x ** 2 - 3);
+wxplot2d(
+    [f(x), ['parametric, sqrt(3), t, [t, -4, 7]], 2], 
+    [x, -2, 5], 
+    [y, -4, 7], 
+    [color, blue, red, green], 
+    [legend, "y=F(x)", "x = 0", "y = 0"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d(x ^ 3 + y ^ 3 = 2, [x, -4, 4], [y, -4, 4], [title, "Lame"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d(y + 3 * (sin(x + y)) = 0, [x, -4, 4], [y, -4, 4], [title, "Skew"])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d(
+    ['parametric, cos(t), sin(t), [t, -6, 6]], 
+    [nticks, 300], 
+    [x, -1.5, 1.5], 
+    [y, -1.5, 1.5],
+    [gnuplot_postamble, "set sixe square"]
+)$
+plot2d(
+    ['parametric, cos(25 * t), sin(15 * t), [t, -6, 6]], 
+    [nticks, 300], 
+    [x, -1.5, 1.5], 
+    [y, -1.5, 1.5],
+    [title, "Courbe de Lissajou"],
+    [gnuplot_postamble, "set sixe square"]
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xv: [0, 1.2, 2.1, 3.4, 4.5, 5.3, 6.1, 7];
+yv: [0, 0.75, 0.2, 1.5, 1, -0.75, -1, 0.5];
+wxplot2d([discrete, xv, yx, [style, linepoints(1, 8, 2)]]);
+wxplot2d([discrete, [[2, 2], [3, 3], [4, 1]], [style, points]]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mes: read_nested_list("curve.txt", comma);
+wxplot2d([discrete, mes], [style, [linespoints, 1, 2, black]])$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(interpol)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x):= cspline(mes, type = natural);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d(
+    [[discrete, mes], f(x)], 
+    [x, 0, 6], 
+    [style, [linespoints, 1, 2], [lines, 2, 2]], 
+    [legend, "data", "Splines"]
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+scene1: gr2d(explicit(sin(x), x, 0, 2 * %pi));
+scene2: gr2d(explicit(cos(x), x, 0, 2 * %pi));
+scene3: gr2d(explicit(cos(2 * x), x, 0, 2 * %pi));
+wxdraw(scene1, scene2, scene3, columns = 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw2d(
+    xrange = [-5, 5],
+    yrange = [-1.5, 1.5],
+    xaxis = true,
+    yaxis = false,
+    line_width = 3,
+    color = red, explicit(sin(x), x, -5, 5),
+    color = blue, explicit(cos(x), x, 2, 5)
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw2d(
+    nticks = 200,
+    polar(sin(3 * t), t, 0, %pi)
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+b: 1$c: 1$
+draw2d(
+    grid = true,
+    line_type = solid,
+    key = "y ^ 2 = x ^ 3 - b * x + c",
+    implicit(y ^ 2 = x ^ 3 - b * x + c, x, -4, 4, y, -4, 4)
+)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+draw2d(
+    xrange = [-0.5, 8],
+    yrange = [-2, 2],
+    points_joined = impulses,
+    line_width = 2,
+    points(mes),
+    xaxis = true
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

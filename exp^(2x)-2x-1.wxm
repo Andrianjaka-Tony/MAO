@@ -1,0 +1,114 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+f
+(x) := exp(2*x) - 2*x - 1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(x);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(1) Domaine de definition
+Df = R
+
+(2) Continuite
+f est continue dans son ensemble de definition
+
+(3) Derive
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+define(df(x), diff(f(x), x));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(4) Etude de signe de df(x) et tableau de signe
+2e^(2x) - 2 = 0
+2e^(2x) = 2
+e^(2x) = 1
+2x = ln(1)
+2x = 0
+x = 0
+
+pour x = -1
+df(-1) = -1.72 < 0
+
+pour x = 1
+df(1) = 12.77 > 0
+
+d'ou le tableau de signe
+x                          -| -∞                    0                   +∞ |
+------------------------ | ------------------------------------------ -|--
+df                          |            -            0           +           -|
+-----------------------------------------------------------------------
+
+(5) limites au bonrnes
+limite de f(x) quand x tend vers -∞
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x), x, -inf);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+limite de f(x) quand x tend vers +∞
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+limit(f(x), x, -inf);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+calcul de f(0)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(0);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+limite vers -∞: +∞
+limite vers +∞: +∞
+f(0) = 0
+
+(6) Tableau de variation
+
+x                | -∞            0           +∞ |
+-------------- |-------------------------------|
+df             -|       -          0         +      |
+-------------- |----------------------------    |
+f                | +∞                          -∞ |
+                 |          \                /         |
+                 |            \            /           |
+                 |                  0                  |
+------------------------------------------------
+
+(7) Tracage
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([f(x)], [x, -6, 6], [y, 0, 15]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

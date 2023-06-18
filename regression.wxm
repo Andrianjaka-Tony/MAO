@@ -1,0 +1,41 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+Ajustement lineaire
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On peut lire un fichier avec maxima
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mes: read_nested_list("./regression.txt", comma);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M: zeromatrix(10, 2);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d(['discrete, mes], [style, points], [title, "Hello"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x: makelist(part(mes, i, 1), i, length(mes));
+y: makelist(part(mes, i, 2), i, length(mes));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+d2(a, b):= sum((y[i] - (a * x[i] + b)) ** 2, i, 1, length(mes));
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

@@ -1,0 +1,61 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: input   start ] */
+f(x) := 3*x + 5;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+;g(x):= 1 / ((y) ** 4 + 1 / x);
+integrate(g(y), y);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+subst(x - 3, y, %);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+taylor(g(x), x, 0, 5);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+h(x) := 2 * x ^ 2 + 5 * x;
+allroots(h(x) = -1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(newton1)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+newton(h(x) + 1, x, -2.3, 1E-6);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+l : [5, 2, 9, 4];
+length(l);
+l[3];
+lg: makelist(i * 2, i, 0, 4, 2);
+part(lg, 3);
+sort(lg, ">");
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A: matrix([0, 1, 2], [3, 5, 4], [9, -1, 2]);
+I: diagmatrix(3, 1);
+V: matrix([x], [y], [z]);
+L: matrix([x, y, z]);
+D: makelist([part(A, i, 1), part(A, i, 2)], i, 1, 3, 1);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

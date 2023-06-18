@@ -1,0 +1,83 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: section start ]
+Ajustement
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: comment start ]
+Lecture de données depuis un fichier  : 
+mes : read_nested_list( "./mesures1.txt" , comma );
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+mes : read_nested_list( "./donnee.txt" , comma );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+M:zeromatrix( 10,2 )$
+for i:1 thru 10 do M[i] : mes[i];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+point discret
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d( ['discrete , mes],[ style , points ] , [title , "Mesures"] )$;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ajustement linéaire par la méthode des moindres carrés : 
+On cherche une droite : y = a.x + b
+approchant "au mieux" les données en minimisant l'écart : 
+d2 = sum( | yd[k] - ( a.xd[k] + b )  |² )
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+xd : makelist( part( mes , i, 1 ) , i , length( mes ))$ 
+yd: makelist( part( mes,i,2 ) , i , length(mes) )$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+d2( a,b )  := sum( ( yd[k] - ( a*xd[k] + b )  )^2 , k , 1, length(mes) );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ratprint : false$kill(a)$kill(b)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+linsolve( [diff( d2(a,b),a )=0, diff( d2( a,b ),b )=0], [a,b] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a : part( %o40 , 1,2 )$b : part( %o40 , 2,2 ) ;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d( [['discrete,mes],a*x+b], [x,1,10], [style,points,lines],
+[legend,"Data" , "Ajusted"] , [title , "Linear fitting"] , [gnuplot_preamble , "set key top left"]    
+);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$

@@ -1,0 +1,641 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: title   start ]
+1 - Liste
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Création d'une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste: [1, 2, 3];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste[1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste[2];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+length(liste);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste: append(liste, [5]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+length(liste);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste[4];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+2 - Quelques operations sur les listes
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+La fonction part permet d'extraire un élément d'une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+part(liste, 4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste2: [1, 2, 3, 5];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On peut faire les operations sur les elements de chaque liste
+Mais il faut que les listes soient de meme taille
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste * liste2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Sommer les éléments d'une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sum(liste[i], i, 1, length(liste));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Triage d'une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(liste, ">");
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(liste, orderlessp);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(liste, ordergreatp);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sort(liste, ordermagnitudep);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ajout des éléments dans une liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste : append(liste, [4, 2, 6]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+on peut aussi faire des Array.filter() comme dans js
+on peut reccuperer soit la liste des elements soit la liste des indeces des elements
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sublist(liste, lambda([x], x >= 3));
+sublist_indices(liste, lambda([x], x >= 3));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+3 - Matrices
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice: matrix( [a, b, c], [d, e, f], [g, h, i] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour creer une matrice diagonale dont les valeurs des diagonales sont les valeurs en arguments
+Il y a aussi la fonction diagmatrix sans le "_" qui permet de faire une matrice diagonale dont les diagonales sont la valeur passee en 2e argument et la taille la valeur passee en 1er argument
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+diag_matrix(4, 5, 9);
+diagmatrix(4, w);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour creer une matrice identite, on fait ident et on entre en argument la taille de la matrice
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+ident(4);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On a aussi les vecteurs
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vecteur : matrix([x], [y], [z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On peut creer des vecteurs a partir d'une liste en utilisant la fonction covect()
+mais il faut faire un load(eigen)$ d'abord
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vecteur : covect([x, y, z]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour transposer une matrice
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+transpose(matrice);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+4 - Operations sur les matrices et le vecteurs
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour faire les operations entres les elements d'une matrice, on utilise les operateurs habituels
+on peut aussi faire le produit par un nombre
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice + matrice;
+matrice - matrice;
+matrice / matrice;
+matrice * matrice;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Mais si on veut faire le produit cartesien, on utilise le point "."
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice . matrice;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+5 - Passage d'un vecteur en liste
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+args(vecteur);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste : makelist(vecteur[i][1], i, 1, length(vecteur));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+6 - Operations sur les vecteurs
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On peut faire des operations comme sur des matrices
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vecteur * vecteur;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vecteur + vecteur;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+vecteur - liste;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+transpose(vecteur);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+La fonction unitvector retourne le vecteur unitaire colineaire
+ex de vecteur unitaire colinaire
+  vecteur [[1], [2]]
+  la norme de ve vecteur est la racine carre de la somme des carrees de chaque valeur
+  dans notre cas, on a sqrt(1 ^ 2 + 2 ^ 2) qui donne sqrt(5)
+  donc on a le resultat: (1 / sqrt(5), 2 / sqrt(5))
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+unitvector(vecteur);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+7 - Creation d'une fonction norme d'un vecteur
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+norme(vecteur) :=
+    block (
+        somme: 0,
+        indice : 1,
+        while indice <= length(vecteur) do (
+            somme : somme + vecteur[indice][1] ^ 2,
+            indice : indice + 1
+        ),
+        return (sqrt(somme))
+    );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+createUnitVector(vecteur):=
+    block (
+        norme : norme(vecteur),
+        liste : makelist((vecteur[i][1] / norme), i, 1, length(vecteur)),
+        return (covect(liste))
+    );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+createUnitVector(vecteur);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+unitvector(vecteur);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+8 - Revu des operations sur les matrices
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice : matrix([a, b, c], [d, e, f], [g, h, i]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On utilise la fonction transpose pour transposer une matrice
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+transpose(matrice);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On utilise la fonction determinant pour avoir le determinant d'une matrice
+NB: le determinant d'une matrice triangulaire est le produit des termes diagonaux
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(matrice);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+On utilise la fonction invert pour inverser une matrice
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+invert(matrice);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+9 - Calcul du determinant et de l'inverse par le methode de Gauss (On utilise cette methode pour rechercher l'inverse d'une matrice)
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice:  matrix( [1,2,3] , [4,5,6] , [1,1,9]  );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 1: determiner les valeurs de P, L et U
+- on definit une variable qui contient la valeur de li_factor de la matrice
+- puis on declare une autre variable qui contiendra la valeur de get_lu_factors de la variable precedente
+- on definira alors les trois variables P, L et U qui sont respectivement les elements 1, 2 et 3 de la variable precedente
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x : lu_factor(matrice);
+lf : get_lu_factors(x);
+P : part(lf, 1);
+L : part(lf, 2);
+U : part(lf, 3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour trouver le determinant, determinant(P) * determinant(U)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+determinant(P) * determinant(U);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 2: creation des vecteurs pour la resolution de la matrice
+- on cree de vecteurs que de dimensions de P (si p 3 * 3, alors on cree 3 vecteurs)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+e1 : covect([1, 0, 0]);
+e2 : covect([0, 1, 0]);
+e3 : covect([0, 0, 1]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 3: on fait la resolution pour chaque colonne
+- le resultat devrait etre un ensemble de vecteurs
+la formule est: x.Vj = eJ
+on cherche les Vj
+pour les chercher, on va faire Vj : lu_backsub(x, eJ)
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v1 : lu_backsub(x, e1);
+v2 : lu_backsub(x, e2);
+v3 : lu_backsub(x, e3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 4: on va maintenant transformer les vecteurs en liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+liste_1 : makelist(v1[i][1], i, 1, length(v1));
+liste_2 : makelist(v2[i][1], i, 1, length(v2));
+liste_3 : makelist(v3[i][1], i, 1, length(v3));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 5: apres la creation de chaque liste, on va creer une matrice a partir de cette liste
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice1T : matrix(liste_1, liste_2, liste_3);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 6: pour avoir l'inverse de la matrice, on va transposer la matrice ci-dessus
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice1 : transpose(matrice1T);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Etape 7: verification
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+matrice . matrice1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+10 - Rang d'une matrice
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rank(matrice);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+rank(matrice1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+11 - Elements propres d'une matrice
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A:matrix( [1,-1,0],[2,-2,0],[1,-1,2] );
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour reccuperer les valeurs propres, on utilise la fonction eigenvalues(matrice)
+Mais pour reccuperer a la fois les valeurs propres et les vecteurs propres, on utilise la fonction eigenvector(matrice)
+
+Pour les valuers propres et vecteurs propres, on remarquere que
+A . u = λ . u
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(eigen)$
+valeurs : eigenvalues(A);
+vecteurs : eigenvectors(A);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lamda_1 : valeurs[1][1];
+u_1 : covect(vecteurs[2][1][1]);
+A . u_1;
+lamda_1 * u_1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lamda_2 : valeurs[1][2];
+u_2 : covect(vecteurs[2][2][1]);
+A . u_2;
+lamda_2 . u_2;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+lamda_3 : valeurs[1][3];
+u_3 : covect(vecteurs[2][3][1]);
+A . u_3;
+lamda_3 . u_3;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Deux matrices transposées ont les memes valeurs propres mais n'auront pas forcement les memes vecteurs propres
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+At : transpose(A);
+eigenvalues(At);
+eigenvectors(At);   
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+12 - Polynome caracteristque d'une matrice
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour determiner le polynome caracteristique d'une matrice, on fait
+P(T) := det( t . I - matrice )
+On remarquera que les racines de P sont les valeurs propres de la matrice
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+P(t, matrice) := block (
+    I : ident(length(matrice)),
+    tI : t . I,
+    response : tI - matrice,
+    determinant(response)
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+valeurs : eigenvalues(A);
+valeurs : valeurs[1];
+index : 1;
+while index <= length(valeurs) do (
+    print(P(valeurs[index], A)).
+    index : index + 1
+);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: title   start ]
+13 - Diagonalisation
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Pour diagonaliser une matrice:
+- on cree d'abord une matrice qui elle la matrice formee par les vecteurs propres
+- puis on calculera son inverse
+- On aura alors une matrice D qui sera egal a T1.A.T qui sera une matrice diagonale dont les diagonaux sont les valeurs propres de la matrice (utiliser la fonction radcan() si besoin)
+
+quelques etapes dans les lecons:
+- P(u, v, w)
+- D = P1 . A . P
+A et D sont equivalents
+. P = P1 . A . P
+. P . D = P . P1 . A . P
+. P . D  = A . P
+. P . D . P1 = A . P . P1
+. P . D . P1 = A
+Si on a 
+  A . x = b
+donc on aura
+  A  . P . P1 . x = b
+  A . P . (P1 .  x) = b
+  en posant y = P1 . x
+  A . P . y = b
+  P1 . A . P . y = P1 . b
+  or D = P1 . A . P
+  D . y = P1 . b
+  avec y = P1 . x
+           x = P . y
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Tt: matrix(eigenvectors(A)[2][1][1], eigenvectors(A)[2][2][1], eigenvectors(A)[2][3][1]);
+T: transpose(Tt);
+T1 : invert(T);
+D: T1 . A . T;
+D: radcan(D);
+determinant(A);
+determinant(D);
+mat_trace(A);
+mat_trace(D);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
